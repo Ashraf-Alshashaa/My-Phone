@@ -3,10 +3,14 @@ import {
     appleStartsBut, 
     samsungStartsBut 
 } from "../views/WelcomeView.js";
+import { initApplePage } from '../pages/applePage.js'
+
 
 export const initWelcomePage = () => {
+    const container = document.getElementById('interface')
+
     const welcomeView = welcomeElement()
-    document.body.appendChild(welcomeView)
+    container.appendChild(welcomeView)
 
     const appleButton =  appleStartsBut()
     welcomeView.appendChild(appleButton);
@@ -15,9 +19,7 @@ export const initWelcomePage = () => {
     welcomeView.appendChild(samsungButton);
 
     appleButton.addEventListener('click',
-    (e) => {
-        return console.log('apple')
-    })
+    (e) => initApplePage())
     
     samsungButton.addEventListener('click',
     (e) => {

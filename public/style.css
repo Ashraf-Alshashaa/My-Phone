@@ -7,6 +7,11 @@
     gap: 20px;
 }
 
+#interface{
+    width: 80%;
+    margin-left: 10%;
+}
+
 h1{
     grid-column: span 2;
     text-align: center;
@@ -14,4 +19,34 @@ h1{
 #apple, #samsung{
     background-color: red;
     grid-row: span 4;
+}
+
+#apple-phones-container{
+    display: grid;
+    grid-template-columns:repeat(3, 30%);
+    gap: 30px;
+    margin: 0 auto;
+}
+
+#apple-phones-container div {
+display: flex;
+flex-direction: column;
+padding: 10%;
+border-radius: 10px;
+box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;;
+   
+
+}
+
+#apple-phones-container div h1{
+    font-size: large;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#apple-phones-container div img{
+   
+  width: 80%;
+  margin: auto;
+   
 }
