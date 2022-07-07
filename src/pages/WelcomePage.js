@@ -18,8 +18,7 @@ export const initWelcomePage = () => {
     const samsungButton =  samsungStartsBut()
     welcomeView.appendChild(samsungButton);
 
-    appleButton.addEventListener('click',
-    (e) => initApplePage())
+    appleButton.addEventListener('click', initApplePage)
     
     samsungButton.addEventListener('click',
     (e) => {
