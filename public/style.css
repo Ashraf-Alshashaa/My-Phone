@@ -1,52 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+ul {
+    list-style: none;
+}
 
-#welcome-container{
+li{
+    padding: 10px;
+}
+
+#interface {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+/*-- welcome page --*/
+
+#welcome-container {
     display: grid;
     grid-template-columns:repeat(2, 1fr);
     grid-template-rows:repeat(5, 1fr);
     gap: 20px;
 }
 
-#interface{
-    width: 80%;
-    margin-left: 10%;
-}
 
-h1{
+h1 {
     grid-column: span 2;
     text-align: center;
 }
-#apple, #samsung{
+
+#apple, #samsung {
     background-color: red;
     grid-row: span 4;
 }
 
-#apple-phones-container{
+#apple-phones-container {
     display: grid;
-    grid-template-columns:repeat(3, 30%);
-    gap: 30px;
+    grid-template-columns:repeat(12, 1fr);
+    gap: 20px;
     margin: 0 auto;
 }
 
-#apple-phones-container div {
-display: flex;
-flex-direction: column;
-padding: 10%;
-border-radius: 10px;
-box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;;
-   
+/*-- Apple page --*/
 
+#apple-phones-container div {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;;
 }
 
-#apple-phones-container div h1{
+#apple-phones-container div h1 {
     font-size: large;
     text-align: center;
     margin-top: 50px;
 }
 
-#apple-phones-container div img{
-   
-  width: 80%;
-  margin: auto;
-   
+#apple-phones-container div img {
+    width: 80%;
+    margin: auto;
 }
+
+/*-- details page -- */
+
+#details-container {
+    grid-column: 2 / 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+#details-container h1 {
+    grid-column: span 12 ;
+}
+
+#details-container img {
+    grid-column: 2 / 6 ;
+    align-self: center;
+}
+
+#details-img {
+    max-width: 100%;
+}
+
+#summary-container {
+    grid-column: 7 / 12 ;
+    align-self: center;
+}
+
+#summary-container h4 {
+    min-width: 120px;
+}
+
+#summary-container li {
+    display: flex;
+    align-items: center;
+    background-color:rgba(0, 255, 255, 0.325);
+    margin-bottom: 10px ;
+}
+
+#specific-data-container h2 {
+    margin: 20px 0;
+}
+
+#specific-data-container {
+    grid-column: 2 / 12 ;
+}
+
+#specific-data-container li {
+    display: flex;
+    align-items: center;
+    background-color:rgba(0, 255, 255, 0.325);
+    margin-bottom: 10px ;
+}
+
+#specific-data-container h4 {
+    flex :1;
+}
+
+#specific-data-container span {
+    flex :2;
+}
+

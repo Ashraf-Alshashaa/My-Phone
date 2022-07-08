@@ -1,6 +1,6 @@
 
 
-export const fetchAppelPhonesData = async (url) => {
+export const fetchData = async (url) => {
     const getApiData = await fetch (url)
     const dataJson = await convertToJson(getApiData);
     return dataJson;

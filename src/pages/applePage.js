@@ -1,13 +1,11 @@
-import { 
-    createAppleElement, 
-    createCard
- } from '../views/applesView.js';
+import {  createAppleElement, createCard } from '../views/applesView.js';
 import { 
     APPLE_PHONES_CONTAINER,
     INTER_FACE, 
     APPLE_API_URL
  } from '../constants.js';
-import { fetchAppelPhonesData } from '../data.js'
+import { fetchData } from '../data.js'
+import { initDetailsPage } from './detailsPage.js'
 
 
 
@@ -20,12 +18,10 @@ export const initApplePage = () => {
 }
 
 const createPhoneCard = async () => {
-    const phonesArray = await fetchAppelPhonesData(APPLE_API_URL);
-    const card = phonesArray.data.phones.forEach(({phone_name, detail, image}) => {
-
-        const card = createCard ( phone_name, image)
+    const phonesArray = await fetchData(APPLE_API_URL);
+    phonesArray.data.phones.forEach(({phone_name, detail, image}) => {
+        const card = createCard( phone_name, image)
         createDetailButton(detail, card)
-
         const container = document.getElementById(APPLE_PHONES_CONTAINER)
         container.appendChild(card)
     });
@@ -34,9 +30,10 @@ const createPhoneCard = async () => {
 const createDetailButton = (detail, card) => {
     const button = document.createElement('button');
     button.innerText = "more details";
-    const apiDetails = detail
-    button.setAttribute('name', `${apiDetails}`)
     card.appendChild(button)
+    button.addEventListener('click', () => {
+        initDetailsPage(detail)
+    })
 }
 
 
