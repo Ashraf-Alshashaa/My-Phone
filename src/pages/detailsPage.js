@@ -1,4 +1,4 @@
-//import { INTER_FACE } from "../constants";
+
 import { detailsElement, summaryElement } from "../views/detailsView.js";
 import {
     INTER_FACE, 
@@ -6,24 +6,21 @@ import {
     SUMMARY_CONTAINER,
     DETAILS_IMG
 } from '../constants.js'
-import { fetchData } from '../data.js';
+import { getJsonData } from '../data.js';
 
 
 export const initDetailsPage = async (url) => {
-    const container = document.getElementById(INTER_FACE)
+    const container = document.getElementById(INTER_FACE);
     container.innerHTML = '';
 
-    const page = detailsElement()
-    container.appendChild(page)
+    const page = detailsElement();
+    container.appendChild(page);
 
-    const jsonData = await fetchData(url)
-    //console.log(jsonData)
-    summary(jsonData)
-    specificationDetails(jsonData)
-    getImgSrc(jsonData)
+    const jsonData = await getJsonData(url);
+    summary(jsonData);
+    specificationDetails(jsonData);
+    getImgSrc(jsonData);
 
- 
-    
 }
 
 const getImgSrc = (jsonData) => {
@@ -34,7 +31,7 @@ const getImgSrc = (jsonData) => {
 }
 
 const summary = (jsonData) => {
-    const summaryContainer = document.getElementById(SUMMARY_CONTAINER)
+    const summaryContainer = document.getElementById(SUMMARY_CONTAINER);
     const summaryObj = jsonData.data
 
     let key;
@@ -44,20 +41,16 @@ const summary = (jsonData) => {
             const title = key.replace(/_/g, " ")
             const paragraph = summaryObj[key]
             const element = summaryElement(title, paragraph)
-            
-            // const li =document.createElement('li')
-            // li.innerHTML = `<h4>${key}</h4> </span>${printData[key]}</span>`.replace(/_/g, " ");
             summaryContainer.appendChild(element)
         }
 
-    }
-    
+    }    
 } 
 
 const specificationDetails = (jsonData) => {
-
-    jsonData.data.specifications.forEach( specification => {
     const container = document.getElementById(SPECIFIC_DATA_CONTAINER);
+    
+    jsonData.data.specifications.forEach( specification => {
     const containerTitle = document.createElement('h2');
     containerTitle.innerHTML = specification.title;
     container.appendChild(containerTitle);
@@ -66,7 +59,6 @@ const specificationDetails = (jsonData) => {
             const li = document.createElement('li');
             li.innerHTML = `<h4>${key}</h4> <span>${val}</span>`;
             container.appendChild(li);
-            console.log(li)
         })
     });
 }

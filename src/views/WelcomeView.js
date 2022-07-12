@@ -9,20 +9,20 @@ export const welcomeElement = () => {
   return container;
 }
 
-export const appleStartsBut = () => {
-  const button = document.createElement('div')
-  button.id = "apple"
-  button.innerHTML = String.raw`
+export const applePageElement = () => {
+  const element = document.createElement('div')
+  element.id = "apple"
+  element.innerHTML = String.raw`
   <h1>Apple</h1>
   `
-  return button
+  return element
 }
 
-export const samsungStartsBut = () => {
-  const button = document.createElement('div')
-  button.id = "samsung"
-  button.innerHTML = String.raw`
+export const samsungPageElement = () => {
+  const element = document.createElement('div')
+  element.id = "samsung"
+  element.innerHTML = String.raw`
   <h1>Samsung</h1>
   `
-  return button
+  return element
 }

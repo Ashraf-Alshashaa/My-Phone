@@ -1,28 +1,37 @@
 import { 
     welcomeElement, 
-    appleStartsBut, 
-    samsungStartsBut 
+    applePageElement, 
+    samsungPageElement 
 } from "../views/WelcomeView.js";
-import { initApplePage } from '../pages/applePage.js'
+import { initPhonesListPage } from './phonesListPage.js'
+import { getJsonData } from "../data.js";
+import { SAMSUNG_API_URL, APPLE_API_URL,INTER_FACE } from "../constants.js";
 
 
 export const initWelcomePage = () => {
-    const container = document.getElementById('interface')
+    const container = document.getElementById(INTER_FACE);
 
     const welcomeView = welcomeElement()
     container.appendChild(welcomeView)
 
-    const appleButton =  appleStartsBut()
-    welcomeView.appendChild(appleButton);
+    const applePage =  applePageElement()
+    welcomeView.appendChild(applePage);
 
-    const samsungButton =  samsungStartsBut()
-    welcomeView.appendChild(samsungButton);
+    const samsungPage =  samsungPageElement()
+    welcomeView.appendChild(samsungPage );
 
-    appleButton.addEventListener('click', initApplePage)
+    applePage.addEventListener('click',
+    async (e) => {
+        const jsonData = await getJsonData(APPLE_API_URL)
+        initPhonesListPage(jsonData)
+    })
     
-    samsungButton.addEventListener('click',
-    (e) => {
-        return console.log('samsung')
+    samsungPage .addEventListener('click',
+    async (e) => {
+        const jsonData = await getJsonData(SAMSUNG_API_URL)
+        initPhonesListPage(jsonData)
     })
 }
+
+
 

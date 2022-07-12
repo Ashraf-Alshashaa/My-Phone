@@ -1,9 +1,10 @@
 
 
-export const fetchData = async (url) => {
-    const getApiData = await fetch (url)
-    const dataJson = await convertToJson(getApiData);
-    return dataJson;
+export const getJsonData = async (url) => {
+    try {
+        const response = await fetch (url)
+        return response.json();
+    }catch{
+        throw new Error("response is not defiant")
+    }    
 }
-
-const convertToJson =  data => data.json();
