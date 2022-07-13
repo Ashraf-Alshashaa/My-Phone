@@ -4,6 +4,30 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+html{
+    height: 100%;
+}
+body{
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    border: 1px solid black;
+    margin: 20px auto;
+    width: 100%;
+}
+
+footer{
+    margin-top: auto;
+    text-align: center;
+    border: 1px solid black;
+    margin: 20px auto;
+    width: 100%;
+
+}
 
 ul {
     list-style: none;
@@ -15,8 +39,24 @@ li{
 
 #interface {
     width: 80%;
-    margin-left: 10%;
-    margin-top: 50px;
+    margin: auto;
+    height: 100%;
+}
+
+/*-- search --*/
+
+header input{
+    margin: 0px 10% 0px auto;
+    width: 20%;
+}
+
+#search-container{
+    position: absolute;
+    background-color: aquamarine;
+    left: 70%;
+    top: 50px;
+    width: 20%;
+    text-align: center;
 }
 
 /*-- welcome page --*/
@@ -155,5 +195,7 @@ h1 {
 #specific-data-container span {
     flex :2;
 }
+
+
 
 
