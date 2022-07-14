@@ -1,54 +1,59 @@
-<h1>Full description</h1>
+# Full description
 
-<p>The app will be a website can you look through it at the details of almost all phones in this world <br> - there will be a ...</p>
+The app will be a website can you look through it at the details of almost all phones in this world
 
-<h3> 1- welcome page: it will contain...</h3>
-<ul>
-<li>a selector element for phone brands 
-</li>
-<li>button to move us to the list of Apple brand phones</li>
-<li>button to move us to the list of Samsung brand phones</li>
-</ul>
+---
 
-<h3> 2- Phones list page: it will contain ...</h3>
-<ul>
-<li>list of phones cards of a brand, each card has an image,  phone name, and button to move us to the details page of the selected phone</li>
-<li>back button</li>
-</ul>
+## there will be
 
-<h3>3- details page:  it will contain ...</h3>
-<ul>
-<li>img of the selected phone</li>
-<li>summary of most important details</li>
-<li>the rest of the details</li>
-<li>back button </li>
-</ul>
+### 1- welcome page
 
-<h3> 4- search bar of phones:
-</h3>
-<ul>
-<li>return lest of phones names, each one moves us to the selected phone details</li>
-</ul>
+> _it will contain_
 
-<div>
+a selector element for phone brands
+button to move us to the list of Apple brand phones
+button to move us to the list of Samsung brand phones
 
-<h4>MUST-HAVE</h4>
-<p>
-1. Create the project structure<br>
-2. Create Readme file<br>
-3. Create welcome page<br>
-4. Create a page to view the list of phone<br>
-5. Create phones cards<br>
-6. Create details phone page<br>
-7. Create brands selector<br>
-8. Create search bar <br>
-9. Create a button to back to the home page<br>
-10. style<br>
-11. Prepare the repository</p>
+### 2- Phones list page
 
-<h4>NICE-TO-HAVE</h4>
-<p>
-1. add phot slider to details page<br>
-2. back button<br>
-3. A user can refresh the page and still have the current page</p>
-</div>
+> _it will contain_
+
+- list of phones cards of a brand, each card has an image, phone name, and button to move us to the details page of the selected phone
+- back button
+
+### 3- details page
+
+> _it will contain_
+
+- img of the selected phone
+- summary of most important details
+- the rest of the details
+- back button
+
+### 4- search bar of phones
+
+- return lest of phones names, each one moves us to the selected phone details
+
+---
+
+#### MUST-HAVE
+
+1. Create the project structure
+2. Create Readme file
+3. Create welcome page
+4. Create a page to view the list of phone
+5. Create phones cards
+6. Create details phone page
+7. Create brands selector
+8. Create search bar
+9. Create a button to back to the home page
+10. Handling errors
+11. style
+12. Prepare the repository
+
+#### NICE-TO-HAVE
+
+1. add photos slider to details page
+2. add phone photo to search phones list
+3. back button
+4. A user can refresh the page and still have the current page

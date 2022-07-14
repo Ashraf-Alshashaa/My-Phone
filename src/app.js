@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-import {initWelcomePage}  from './pages/WelcomePage.js';
-import {loadSearch}  from './pages/searchPage.js';
+import { initWelcomePage } from "./pages/homePage.js";
+import { initSearchBox } from "./components/searchBox.js";
 
 const loadApp = () => {
-  initWelcomePage ();
+  initWelcomePage();
+  initSearchBox();
 };
 
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
   loadApp();
-  loadSearch ();
 });
