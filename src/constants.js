@@ -12,3 +12,4 @@ export const SPECIFIC_DATA_CONTAINER = "specific-data-container";
 export const SUMMARY_CONTAINER = "summary-container";
 export const DETAILS_CONTAINER = "details-container";
 export const DETAILS_IMG = "details-img";
+export const HOME_PAGE_BUTTON = "homepage-button";

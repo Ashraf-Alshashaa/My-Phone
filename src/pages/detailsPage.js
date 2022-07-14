@@ -6,11 +6,13 @@ import {
   DETAILS_IMG,
 } from "../constants.js";
 import { getJsonData } from "../helpers/fetch.js";
+import { initHomePageButton } from "./buttonsPage.js";
 
 export const initDetailsPage = async (url) => {
   const container = document.getElementById(INTER_FACE);
   container.innerHTML = "";
-
+  const homePageButton = initHomePageButton();
+  container.appendChild(homePageButton);
   const page = detailsElement();
   container.appendChild(page);
 

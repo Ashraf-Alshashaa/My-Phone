@@ -106,7 +106,14 @@ h1 {
   width: 400px;
 }
 
-/*-- Apple page --*/
+/*-- buttons --*/
+
+#homepage-button {
+  width: 20%;
+  margin: 20px 40% 40px 40%;
+}
+
+/*-- phones list page --*/
 
 .phones-list div {
   grid-column: span 4;

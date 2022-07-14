@@ -15,7 +15,7 @@ import {
 } from "../constants.js";
 import { initSelectElement } from "./selectBrandPage.js";
 
-export const initWelcomePage = () => {
+export const initHomePage = () => {
   const container = document.getElementById(INTER_FACE);
   const welcomeView = welcomeElement();
 

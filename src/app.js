@@ -1,10 +1,10 @@
 "use strict";
 
-import { initWelcomePage } from "./pages/homePage.js";
+import { initHomePage } from "./pages/homePage.js";
 import { initSearchBox } from "./components/searchBox.js";
 
 const loadApp = () => {
-  initWelcomePage();
+  initHomePage();
   initSearchBox();
 };
 
