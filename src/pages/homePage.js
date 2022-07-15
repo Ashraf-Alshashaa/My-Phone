@@ -1,5 +1,5 @@
 import {
-  welcomeElement,
+  createHomeElement,
   applePageElement,
   samsungPageElement,
   createBranSelectorButton,
@@ -14,32 +14,43 @@ import {
   SELECT_CONTAINER,
 } from "../constants.js";
 import { initSelectElement } from "./selectBrandPage.js";
+import { renderError } from "../helpers/errorHandling.js";
 
 export const initHomePage = () => {
   const container = document.getElementById(INTER_FACE);
-  const welcomeView = welcomeElement();
+  const homePageMain = createHomeElement();
 
   const applePage = applePageElement();
-  applePage.addEventListener("click", async (e) => {
-    const jsonData = await getJsonData(APPLE_API_URL);
-    initPhonesListPage(jsonData);
-  });
-  welcomeView.appendChild(applePage);
+  addEventListenerFetchData(applePage, APPLE_API_URL, initPhonesListPage);
+  homePageMain.appendChild(applePage);
 
   const samsungPage = samsungPageElement();
-  samsungPage.addEventListener("click", async (e) => {
-    const jsonData = await getJsonData(SAMSUNG_API_URL);
-    initPhonesListPage(jsonData);
-  });
-  welcomeView.appendChild(samsungPage);
+  addEventListenerFetchData(samsungPage, SAMSUNG_API_URL, initPhonesListPage);
+  homePageMain.appendChild(samsungPage);
 
   const button = createBranSelectorButton();
-  button.addEventListener("click", () => {
+  button.addEventListener("click", async () => {
     if (!document.getElementById(SELECT_CONTAINER)) {
-      const brandSelector = initSelectElement(BRANDS_API_URL);
-      welcomeView.appendChild(brandSelector);
+      try {
+        const jsonData = await getJsonData(BRANDS_API_URL);
+        const brandSelector = initSelectElement(jsonData);
+        homePageMain.appendChild(brandSelector);
+      } catch (error) {
+        renderError(error);
+      }
     }
   });
-  welcomeView.appendChild(button);
-  container.appendChild(welcomeView);
+  homePageMain.appendChild(button);
+  container.appendChild(homePageMain);
+};
+
+const addEventListenerFetchData = (element, url, callback) => {
+  element.addEventListener("click", async (e) => {
+    try {
+      const jsonData = await getJsonData(url);
+      callback(jsonData);
+    } catch (error) {
+      renderError(error);
+    }
+  });
 };

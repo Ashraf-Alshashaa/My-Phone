@@ -7,6 +7,7 @@ import {
 } from "../constants.js";
 import { getJsonData } from "../helpers/fetch.js";
 import { initHomePageButton } from "./buttonsPage.js";
+import { renderError } from "../helpers/errorHandling.js";
 
 export const initDetailsPage = async (url) => {
   const container = document.getElementById(INTER_FACE);
@@ -15,11 +16,14 @@ export const initDetailsPage = async (url) => {
   container.appendChild(homePageButton);
   const page = detailsElement();
   container.appendChild(page);
-
-  const jsonData = await getJsonData(url);
-  summary(jsonData);
-  specificationDetails(jsonData);
-  getImgSrc(jsonData);
+  try {
+    const jsonData = await getJsonData(url);
+    summary(jsonData);
+    specificationDetails(jsonData);
+    getImgSrc(jsonData);
+  } catch (error) {
+    renderError(error);
+  }
 };
 
 const getImgSrc = (jsonData) => {

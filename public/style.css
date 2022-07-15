@@ -13,6 +13,14 @@ body {
   flex-direction: column;
 }
 
+/*--  error handling --*/
+
+#err-img-container {
+  text-align: center;
+  min-width: 500px;
+  margin-bottom: 50px;
+}
+
 header {
   display: flex;
   border: 1px solid black;

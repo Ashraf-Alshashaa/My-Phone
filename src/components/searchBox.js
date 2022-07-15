@@ -1,6 +1,6 @@
 import { getJsonData } from "../helpers/fetch.js";
 import { initDetailsPage } from "../pages/detailsPage.js";
-
+import { renderError } from "../helpers/errorHandling.js";
 export const initSearchBox = () => {
   const searchElement = document.getElementById("search");
   let searchTimeoutToken;
@@ -19,8 +19,12 @@ export const initSearchBox = () => {
 
 const searchShow = async (query) => {
   const url = `http://api-mobilespecs.azharimm.site/v2/search?query=${query}`;
-  const jsonData = await getJsonData(url);
-  renderResult(jsonData);
+  try {
+    const jsonData = await getJsonData(url);
+    renderResult(jsonData);
+  } catch (error) {
+    renderError(error);
+  }
 };
 
 const renderResult = (jsonData) => {

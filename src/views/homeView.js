@@ -1,8 +1,8 @@
-import { WELCOME_CONTAINER } from "../constants.js";
+import { HOME_MAIN_CONTAINER } from "../constants.js";
 
-export const welcomeElement = () => {
-  const container = document.createElement("div");
-  container.id = WELCOME_CONTAINER;
+export const createHomeElement = () => {
+  const container = document.createElement("main");
+  container.id = HOME_MAIN_CONTAINER;
   container.innerHTML = String.raw`
     <h1>Welcome</h1>
   `;
