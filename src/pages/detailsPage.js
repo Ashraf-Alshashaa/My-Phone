@@ -54,16 +54,17 @@ const summary = (jsonData) => {
 
 const specificationDetails = (jsonData) => {
   const container = document.getElementById(SPECIFIC_DATA_CONTAINER);
-
   jsonData.data.specifications.forEach((specification) => {
     const containerTitle = document.createElement("h2");
     containerTitle.innerHTML = specification.title;
     container.appendChild(containerTitle);
+    const blockContainer = document.createElement("div");
+    container.appendChild(blockContainer);
 
     specification.specs.forEach(({ key, val }) => {
       const li = document.createElement("li");
       li.innerHTML = `<h4>${key}</h4> <span>${val}</span>`;
-      container.appendChild(li);
+      blockContainer.appendChild(li);
     });
   });
 };

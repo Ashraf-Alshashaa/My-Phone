@@ -1,9 +1,4 @@
-import {
-  createHomeElement,
-  applePageElement,
-  samsungPageElement,
-  createBranSelectorButton,
-} from "../views/homeView.js";
+import { createHomeElement } from "../views/homeView.js";
 import { initPhonesListPage } from "./phonesListPage.js";
 import { getJsonData } from "../helpers/fetch.js";
 import {
@@ -18,30 +13,34 @@ import { renderError } from "../helpers/errorHandling.js";
 
 export const initHomePage = () => {
   const container = document.getElementById(INTER_FACE);
-  const homePageMain = createHomeElement();
 
-  const applePage = applePageElement();
-  addEventListenerFetchData(applePage, APPLE_API_URL, initPhonesListPage);
-  homePageMain.appendChild(applePage);
+  const main = createHomeElement();
+  container.appendChild(main);
 
-  const samsungPage = samsungPageElement();
-  addEventListenerFetchData(samsungPage, SAMSUNG_API_URL, initPhonesListPage);
-  homePageMain.appendChild(samsungPage);
+  const appleElement = document.getElementById("apple");
+  addEventListenerFetchData(appleElement, APPLE_API_URL, initPhonesListPage);
 
-  const button = createBranSelectorButton();
+  const samsungElement = document.getElementById("samsung");
+  addEventListenerFetchData(
+    samsungElement,
+    SAMSUNG_API_URL,
+    initPhonesListPage
+  );
+
+  const article1 = document.getElementById("article");
+
+  const button = document.getElementById("more-brands-button");
   button.addEventListener("click", async () => {
     if (!document.getElementById(SELECT_CONTAINER)) {
       try {
         const jsonData = await getJsonData(BRANDS_API_URL);
         const brandSelector = initSelectElement(jsonData);
-        homePageMain.appendChild(brandSelector);
+        article1.appendChild(brandSelector);
       } catch (error) {
         renderError(error);
       }
     }
   });
-  homePageMain.appendChild(button);
-  container.appendChild(homePageMain);
 };
 
 const addEventListenerFetchData = (element, url, callback) => {

@@ -45,15 +45,15 @@ The app will be a website can you look through it at the details of almost all p
 - [x] Create phones cards
 - [x] Create details phone page
 - [x] Create brands selector
-- [x] Create search bar
+- [x] Create search box
 - [x] Create a button to back to the home page
 - [x] Handling errors
-- [ ] style
+- [x] style
 - [ ] Prepare the repository
 
 #### NICE-TO-HAVE
 
 - [ ] add photos slider to details page
-- [ ] add phone photo to search phones list
+- [x] add phone photo to search phones list
 - [ ] back button
 - [ ] A user can refresh the page and still have the current page

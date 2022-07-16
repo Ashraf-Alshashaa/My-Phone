@@ -4,32 +4,25 @@ export const createHomeElement = () => {
   const container = document.createElement("main");
   container.id = HOME_MAIN_CONTAINER;
   container.innerHTML = String.raw`
-    <h1>Welcome</h1>
+  <div class = "container">
+    <article id = "article">
+      <div>
+        <h1>Are You A Technology Lover?</h1>
+        <h2>Here you will find detailed information <br> about almost all phones</h2>
+        <button id = "more-brands-button">Brands List</button>
+      </div>
+    </article>
+    <aside>
+     <div id = "apple">
+      <img src = "public/images/apple_logo.png" id = "apple-img"/>
+     </div>
+     <div id = "samsung">
+       <img src = "public/images/samsung_logo.jpeg"  id = "samsung-img"/>
+     </div>
+    </aside>
+  </div>
+        <img class = "main-img" src = "public/images/home-page-logo.png"/>
+    
   `;
   return container;
-};
-
-export const applePageElement = () => {
-  const element = document.createElement("div");
-  element.id = "apple";
-  element.innerHTML = String.raw`
-  <h1>Apple</h1>
-  `;
-  return element;
-};
-
-export const samsungPageElement = () => {
-  const element = document.createElement("div");
-  element.id = "samsung";
-  element.innerHTML = String.raw`
-  <h1>Samsung</h1>
-  `;
-  return element;
-};
-
-export const createBranSelectorButton = () => {
-  const button = document.createElement("button");
-  button.textContent = "more brands";
-  button.id = "more-brands-button";
-  return button;
 };

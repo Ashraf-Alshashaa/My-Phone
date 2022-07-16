@@ -18,7 +18,7 @@ export const initSearchBox = () => {
 };
 
 const searchShow = async (query) => {
-  const url = `http://api-mobilespecs.azharimm.site/v2/search?query=${query}`;
+  const url = `https://api-mobilespecs.azharimm.site/v2/search?query=${query}`;
   try {
     const jsonData = await getJsonData(url);
     renderResult(jsonData);
@@ -31,9 +31,8 @@ const renderResult = (jsonData) => {
   const searchContainer = document.getElementById("search-container");
   searchContainer.innerHTML = "";
 
-  jsonData.data.phones.forEach(({ phone_name, detail }) => {
-    const element = document.createElement("li");
-    element.textContent = phone_name;
+  jsonData.data.phones.forEach(({ phone_name, detail, image }) => {
+    const element = createSearchElement(phone_name, image);
     searchContainer.appendChild(element);
 
     element.addEventListener("click", () => {
@@ -41,4 +40,14 @@ const renderResult = (jsonData) => {
       initDetailsPage(detail);
     });
   });
+};
+
+const createSearchElement = (title, imgSrc) => {
+  const element = document.createElement("li");
+
+  element.innerHTML = String.raw`
+    <h3>${title}</h3>
+    <img src = "${imgSrc}" > 
+  `;
+  return element;
 };
