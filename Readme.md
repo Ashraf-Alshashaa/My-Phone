@@ -4,6 +4,10 @@ The app will be a website can you look through it at the details of almost all p
 
 ---
 
+![view-img](./public/images/view-website.png)
+
+> You can try using the application [Here](https://ashraf-alshashaa.github.io/API-Project/)
+
 ## there will be
 
 ### 1- Home page
@@ -35,6 +39,46 @@ The app will be a website can you look through it at the details of almost all p
 - return lest of phones names, each one moves us to the selected phone details
 
 ---
+
+### project structure
+
+```
+_________
+        |______public
+        |   |____images
+        |   |____style.css
+        |
+        |______src
+        |   |
+        |   |____components
+        |   |   |____searchBox.js
+        |   |
+        |   |____helpers
+        |   |   |____errorHandling.js
+        |   |   |____fetch.js
+        |   |
+        |   |____pages
+        |   |   |____buttonsPage.js
+        |   |   |____cardPage.js
+        |   |   |____detailsPage.js
+        |   |   |____homePage.js
+        |   |   |____phonesListPage.js
+        |   |   |____selectBrandPage.js
+        |   |
+        |   |____views
+        |   |   |____buttonsView.js
+        |   |   |____cardView.js
+        |   |   |____detailsView.js
+        |   |   |____homeView.js
+        |   |   |____phonesListView.js
+        |   |   |____selectBrandView.js
+        |   |
+        |   |____app.js
+        |   |____constant.js
+        |
+        |____index.html
+        |____Readme.md
+```
 
 #### MUST-TO-HAVE
 
