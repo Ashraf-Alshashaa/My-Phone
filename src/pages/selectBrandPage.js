@@ -1,5 +1,4 @@
 import {
-  createSelectContainerElement,
   createSelectElement,
   createOptionElement,
 } from "../views/selectBrandView.js";
@@ -7,9 +6,7 @@ import { getJsonData } from "../helpers/fetch.js";
 import { initPhonesListPage } from "./phonesListPage.js";
 import { renderError } from "../helpers/errorHandling.js";
 
-export const initSelectElement = (jsonData) => {
-  const container = createSelectContainerElement();
-
+export const initSelectElement = (jsonData, container) => {
   const select = createSelectElement();
   getBrandsFromAPI(jsonData, select);
 
@@ -22,7 +19,6 @@ export const initSelectElement = (jsonData) => {
     }
   });
   container.appendChild(select);
-  return container;
 };
 
 const getBrandsFromAPI = (jsonData, select) => {

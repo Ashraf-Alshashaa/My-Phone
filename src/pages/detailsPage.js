@@ -16,21 +16,32 @@ export const initDetailsPage = async (url) => {
   container.appendChild(homePageButton);
   const page = detailsElement();
   container.appendChild(page);
+
+  const slider = document.getElementById("slider");
   try {
     const jsonData = await getJsonData(url);
     summary(jsonData);
     specificationDetails(jsonData);
-    getImgSrc(jsonData);
+    getImgSrc(jsonData, 0);
+
+    let index = 1;
+    slider.addEventListener("click", () => {
+      getImgSrc(jsonData, index);
+      if (index < jsonData.data.phone_images.length - 1) {
+        index++;
+        return;
+      }
+      index = 0;
+    });
   } catch (error) {
     renderError(error);
   }
 };
 
-const getImgSrc = (jsonData) => {
+const getImgSrc = (jsonData, index) => {
   const img = document.getElementById(DETAILS_IMG);
-  //get first photo from phone_images array
-  const imgSrc = jsonData.data.phone_images[0];
-  img.src = imgSrc;
+  const imgArray = jsonData.data.phone_images;
+  img.src = imgArray[index];
 };
 
 const summary = (jsonData) => {
@@ -68,3 +79,5 @@ const specificationDetails = (jsonData) => {
     });
   });
 };
+
+const sliderShow = (img, array) => {};

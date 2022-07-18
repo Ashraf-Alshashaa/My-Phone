@@ -1,18 +1,12 @@
-import { SELECT_CONTAINER } from "../constants.js";
+import { SELECT_ELEMENT } from "../constants.js";
 
 export const createSelectElement = () => {
   const select = document.createElement("select");
-  select.id = "select";
+  select.id = SELECT_ELEMENT;
   const firstOption = document.createElement("option");
   firstOption.innerHTML = "select brand";
   select.appendChild(firstOption);
   return select;
-};
-
-export const createSelectContainerElement = () => {
-  const element = document.createElement("div");
-  element.id = SELECT_CONTAINER;
-  return element;
 };
 
 export const createOptionElement = (name, url) => {

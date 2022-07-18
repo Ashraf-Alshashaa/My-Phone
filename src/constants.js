@@ -1,6 +1,5 @@
 export const HOME_MAIN_CONTAINER = "main-container";
 export const APPLE_CONTAINER = "apple-container";
-export const SELECT_CONTAINER = "select-container";
 export const APPLE_PHONES_CONTAINER = "apple-phones-container";
 export const SPECIFIC_DATA_CONTAINER = "specific-data-container";
 export const SUMMARY_CONTAINER = "summary-container";
@@ -13,3 +12,4 @@ export const SAMSUNG_API_URL =
 export const BRANDS_API_URL = "https://api-mobilespecs.azharimm.site/v2/brands";
 export const DETAILS_IMG = "details-img";
 export const HOME_PAGE_BUTTON = "homepage-button";
+export const SELECT_ELEMENT = "select";

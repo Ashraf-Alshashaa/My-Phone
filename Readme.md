@@ -93,11 +93,11 @@ _________
 - [x] Create a button to back to the home page
 - [x] Handling errors
 - [x] style
-- [ ] Prepare the repository
+- [x] Prepare the repository
 
 #### NICE-TO-HAVE
 
-- [ ] add photos slider to details page
+- [x] add photos slider to details page
 - [x] add phone photo to search phones list
 - [ ] back button
 - [ ] A user can refresh the page and still have the current page

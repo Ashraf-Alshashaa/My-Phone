@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -136,14 +138,22 @@ header input {
   min-width: 100%;
   padding-top: 100px;
 }
+
+#main-container img {
+  margin-top: 40px;
+}
 .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 article {
-  margin: 0 5%;
-  max-width: 45%;
+  width: 50%;
+}
+
+article div {
+  height: 250px;
 }
 article h1 {
   text-align: start;
@@ -158,22 +168,21 @@ article h2 {
 /* select element */
 
 #select {
-  text-align: center;
   font-size: large;
   margin-top: 10px;
   width: 200px;
   height: 35px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  padding-right: 29px;
+  direction: rtl;
 }
 
 aside {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 5%;
-  width: 45%;
-  margin: 0 5%;
+  width: 50%;
 }
 
 #apple,
@@ -194,7 +203,7 @@ aside {
 
 .main-img {
   width: 60%;
-  margin: 50px 20% 0 20%;
+  margin: 300px 20% 10px 20%;
 }
 
 /*-- buttons --*/
@@ -283,9 +292,17 @@ button {
 }
 
 #details-container img {
-  grid-column: 2 / 7;
-  align-self: center;
   max-width: 100%;
+  max-height: 100%;
+}
+
+#slider {
+  grid-column: 2 / 7;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
 }
 
 #summary-container {
@@ -352,14 +369,21 @@ footer span i {
 /*-- Media Queries --*/
 
 @media screen and (max-width: 1024px) {
+  .container {
+    height: 500px;
+  }
+
   .phones-list div {
     grid-column: span 4;
   }
 
-  #details-container img {
+  #slider {
     grid-column: span 12;
-    max-width: 80%;
     margin: 0 10% 50px 10%;
+  }
+
+  #slider img {
+    max-width: 80%;
   }
 
   #summary-container {
@@ -368,6 +392,10 @@ footer span i {
 
   #summary-container li {
     margin-bottom: 0;
+  }
+
+  #specific-data-container {
+    grid-column: span 12;
   }
 }
 @media screen and (max-width: 820px) {
@@ -385,13 +413,35 @@ footer span i {
 }
 
 @media screen and (max-width: 600px) {
+  html {
+    max-height: 100%;
+  }
+
   body {
     padding: 0;
+    max-height: 100%;
+  }
+
+  h1 {
+    font-size: 22px !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+  }
+
+  h3 {
+    font-size: 16px !important;
+  }
+
+  p {
+    font-size: 14px !important;
   }
 
   header {
+    padding: 10px;
     flex-direction: column;
-    height: 150px;
+    height: 180px;
     padding-bottom: 20px;
     margin: 0px;
   }
@@ -401,25 +451,31 @@ footer span i {
   }
 
   .logo h1 {
+    margin: 0;
     margin-bottom: 10px;
   }
 
   #main-container {
-    padding-top: 50px;
+    padding-top: 20px;
+  }
+  .main-img {
+    width: 60%;
+    margin: 50px 20% 0 20%;
   }
 
   .container {
     flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
   }
   article {
     min-width: 100%;
-    margin-bottom: 30px;
+    margin: 0;
+    height: 220px;
   }
 
   aside {
     min-width: 100%;
-    margin-top: 20px;
   }
 
   .phones-list div {
@@ -432,7 +488,7 @@ footer span i {
   }
 
   #search-container {
-    top: 140px;
+    top: 160px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -441,5 +497,19 @@ footer span i {
 
   header div i {
     display: none !important;
+  }
+
+  #slider {
+    height: 250px;
+    margin: 0;
+  }
+  #specific-data-container {
+    grid-column: span 12;
+  }
+  #summary-container li {
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
   }
 }

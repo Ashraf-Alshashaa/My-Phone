@@ -6,7 +6,7 @@ export const createHomeElement = () => {
   container.innerHTML = String.raw`
   <div class = "container">
     <article id = "article">
-      <div>
+      <div class = "main-text">
         <h1>Are You A Technology Lover?</h1>
         <h2>Here you will find detailed information <br> about almost all phones</h2>
         <button id = "more-brands-button">Brands List</button>

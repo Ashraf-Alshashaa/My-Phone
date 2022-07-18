@@ -1,6 +1,7 @@
 import { getJsonData } from "../helpers/fetch.js";
 import { initDetailsPage } from "../pages/detailsPage.js";
 import { renderError } from "../helpers/errorHandling.js";
+
 export const initSearchBox = () => {
   const searchElement = document.getElementById("search");
   let searchTimeoutToken;
@@ -25,6 +26,8 @@ const searchShow = async (query) => {
   } catch (error) {
     renderError(error);
   }
+
+  clearSearchList();
 };
 
 const renderResult = (jsonData) => {
@@ -36,7 +39,7 @@ const renderResult = (jsonData) => {
     searchContainer.appendChild(element);
 
     element.addEventListener("click", () => {
-      searchContainer.innerHTML = "";
+      searchContainer.value = "";
       initDetailsPage(detail);
     });
   });
@@ -44,10 +47,21 @@ const renderResult = (jsonData) => {
 
 const createSearchElement = (title, imgSrc) => {
   const element = document.createElement("li");
-
+  element.className = "search-element";
   element.innerHTML = String.raw`
     <h3>${title}</h3>
     <img src = "${imgSrc}" > 
   `;
   return element;
+};
+
+const clearSearchList = () => {
+  document.body.addEventListener("click", (e) => {
+    if (document.querySelector(".search-element")) {
+      if (e.target !== document.querySelector("#search-container")) {
+        document.querySelector("#search-container").innerHTML = "";
+        document.getElementById("search").value = "";
+      }
+    }
+  });
 };

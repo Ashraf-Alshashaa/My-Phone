@@ -6,7 +6,6 @@ import {
   APPLE_API_URL,
   BRANDS_API_URL,
   INTER_FACE,
-  SELECT_CONTAINER,
 } from "../constants.js";
 import { initSelectElement } from "./selectBrandPage.js";
 import { renderError } from "../helpers/errorHandling.js";
@@ -27,15 +26,14 @@ export const initHomePage = () => {
     initPhonesListPage
   );
 
-  const article1 = document.getElementById("article");
+  const mainText = document.querySelector(".main-text");
 
   const button = document.getElementById("more-brands-button");
   button.addEventListener("click", async () => {
-    if (!document.getElementById(SELECT_CONTAINER)) {
+    if (!document.getElementById("select")) {
       try {
         const jsonData = await getJsonData(BRANDS_API_URL);
-        const brandSelector = initSelectElement(jsonData);
-        article1.appendChild(brandSelector);
+        initSelectElement(jsonData, mainText);
       } catch (error) {
         renderError(error);
       }
