@@ -32,6 +32,7 @@ footer {
 #apple-img,
 #samsung-img,
 #search-container li,
+#slider img,
 button {
   cursor: pointer;
 }
@@ -217,7 +218,8 @@ button {
   color: whitesmoke;
 }
 
-#homepage-button {
+#homepage-button,
+.back-button {
   width: 10%;
   min-width: 80px;
   margin: 40px 45%;

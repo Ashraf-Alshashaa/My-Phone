@@ -34,13 +34,13 @@ const renderResult = (jsonData) => {
   const searchContainer = document.getElementById("search-container");
   searchContainer.innerHTML = "";
 
-  jsonData.data.phones.forEach(({ phone_name, detail, image }) => {
+  jsonData.data.phones.forEach(({ phone_name, detail: url, image }) => {
     const element = createSearchElement(phone_name, image);
     searchContainer.appendChild(element);
 
     element.addEventListener("click", () => {
       searchContainer.value = "";
-      initDetailsPage(detail);
+      initDetailsPage(url);
     });
   });
 };

@@ -6,14 +6,21 @@ import {
   DETAILS_IMG,
 } from "../constants.js";
 import { getJsonData } from "../helpers/fetch.js";
-import { initHomePageButton } from "./buttonsPage.js";
+import { initPhoneListButton, initHomePageButton } from "./buttonsPage.js";
 import { renderError } from "../helpers/errorHandling.js";
 
-export const initDetailsPage = async (url) => {
+export const initDetailsPage = async (url, currentPageJsonData) => {
   const container = document.getElementById(INTER_FACE);
   container.innerHTML = "";
-  const homePageButton = initHomePageButton();
-  container.appendChild(homePageButton);
+
+  if (currentPageJsonData) {
+    const phoneListPageButton = initPhoneListButton(currentPageJsonData);
+    container.appendChild(phoneListPageButton);
+  } else {
+    const homePageButton = initHomePageButton();
+    container.appendChild(homePageButton);
+  }
+
   const page = detailsElement();
   container.appendChild(page);
 

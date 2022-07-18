@@ -13,3 +13,10 @@ export const createDetailButton = () => {
   button.className = "details-button";
   return button;
 };
+
+export const createPhoneListButton = () => {
+  const button = document.createElement("button");
+  button.innerText = "back";
+  button.className = "back-button";
+  return button;
+};

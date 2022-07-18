@@ -99,5 +99,5 @@ _________
 
 - [x] add photos slider to details page
 - [x] add phone photo to search phones list
-- [ ] back button
+- [x] back button
 - [ ] A user can refresh the page and still have the current page
