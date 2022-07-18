@@ -20,3 +20,17 @@ export const createPhoneListButton = () => {
   button.className = "back-button";
   return button;
 };
+
+export const createNextImgButton = () => {
+  const button = document.createElement("button");
+  button.innerText = ">";
+  button.className = "next-img-button";
+  return button;
+};
+
+export const createPrevuesImgButton = () => {
+  const button = document.createElement("button");
+  button.innerText = "<";
+  button.className = "prevues-img-button";
+  return button;
+};

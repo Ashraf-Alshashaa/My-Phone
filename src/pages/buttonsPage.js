@@ -4,6 +4,8 @@ import {
   createHomePageButton,
   createDetailButton,
   createPhoneListButton,
+  createNextImgButton,
+  createPrevuesImgButton,
 } from "../views/buttonsView.js";
 import { INTER_FACE } from "../constants.js";
 import { initPhonesListPage } from "./phonesListPage.js";
@@ -31,4 +33,14 @@ export const initPhoneListButton = (jsonData) => {
     initPhonesListPage(jsonData);
   });
   return button;
+};
+
+export const initNextImgButton = (container) => {
+  const button = createNextImgButton();
+  container.appendChild(button);
+};
+
+export const initPrevuesImgButton = (container) => {
+  const button = createPrevuesImgButton();
+  container.appendChild(button);
 };

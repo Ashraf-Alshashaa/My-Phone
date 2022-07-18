@@ -6,7 +6,12 @@ import {
   DETAILS_IMG,
 } from "../constants.js";
 import { getJsonData } from "../helpers/fetch.js";
-import { initPhoneListButton, initHomePageButton } from "./buttonsPage.js";
+import {
+  initPhoneListButton,
+  initHomePageButton,
+  initNextImgButton,
+  initPrevuesImgButton,
+} from "./buttonsPage.js";
 import { renderError } from "../helpers/errorHandling.js";
 
 export const initDetailsPage = async (url, currentPageJsonData) => {
@@ -24,21 +29,41 @@ export const initDetailsPage = async (url, currentPageJsonData) => {
   const page = detailsElement();
   container.appendChild(page);
 
-  const slider = document.getElementById("slider");
+  const imgContainer = document.getElementById("img-container");
+  const imgButtonContainer = document.getElementById("img-button-container");
+  imgContainer.appendChild(imgButtonContainer);
+
+  initPrevuesImgButton(imgButtonContainer);
+  initNextImgButton(imgButtonContainer);
+
   try {
     const jsonData = await getJsonData(url);
     summary(jsonData);
     specificationDetails(jsonData);
     getImgSrc(jsonData, 0);
 
-    let index = 1;
-    slider.addEventListener("click", () => {
-      getImgSrc(jsonData, index);
-      if (index < jsonData.data.phone_images.length - 1) {
-        index++;
-        return;
+    let index = 0;
+    const imgArrayLength = jsonData.data.phone_images.length - 1;
+
+    imgButtonContainer.addEventListener("click", (e) => {
+      if (e.target === document.querySelector(".next-img-button")) {
+        if (index < imgArrayLength) {
+          index++;
+          getImgSrc(jsonData, index);
+        } else {
+          index = 0;
+          getImgSrc(jsonData, index);
+        }
       }
-      index = 0;
+      if (e.target === document.querySelector(".prevues-img-button")) {
+        if (index !== 0) {
+          index = index - 1;
+          getImgSrc(jsonData, index);
+        } else {
+          index = imgArrayLength;
+          getImgSrc(jsonData, index);
+        }
+      }
     });
   } catch (error) {
     renderError(error);

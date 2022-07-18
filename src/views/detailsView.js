@@ -9,7 +9,11 @@ export const detailsElement = () => {
   element.id = DETAILS_CONTAINER;
 
   element.innerHTML = String.raw`
-        <div id= "slider"> <img id="details-img"/> </div>
+
+        <div id= "img-container">
+        <div id="img-div"><img id="details-img"/></div>
+        <div id="img-button-container"></div>
+        </div>
         <ul id= "${SUMMARY_CONTAINER}"></ul>
         <ul id="${SPECIFIC_DATA_CONTAINER}"></ul>
         `;
