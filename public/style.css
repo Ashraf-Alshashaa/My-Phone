@@ -220,7 +220,6 @@ button {
 #homepage-button,
 .back-button {
   width: 10%;
-  min-width: 80px;
   margin: 40px 45%;
   color: white;
 }
@@ -506,7 +505,8 @@ footer span i {
     grid-column: span 12;
   }
 
-  #homepage-button {
+  #homepage-button,
+  .back-button {
     width: 30%;
     margin: 40px 35%;
   }

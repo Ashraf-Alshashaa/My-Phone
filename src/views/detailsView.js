@@ -14,7 +14,7 @@ export const detailsElement = () => {
         <div id="img-div"><img id="details-img"/></div>
         <div id="img-button-container"></div>
         </div>
-        <ul id= "${SUMMARY_CONTAINER}"></ul>
+        <ul id="${SUMMARY_CONTAINER}"></ul>
         <ul id="${SPECIFIC_DATA_CONTAINER}"></ul>
         `;
 
@@ -25,7 +25,7 @@ export const summaryElement = (title, paragraph) => {
   const element = document.createElement("li");
   element.innerHTML = String.raw`
     <h4>${title}</h4>
-    </span>${paragraph}</span>
+    <span>${paragraph}</span>
     `;
 
   return element;

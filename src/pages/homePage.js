@@ -9,6 +9,7 @@ import {
 } from "../constants.js";
 import { initSelectElement } from "./selectBrandPage.js";
 import { renderError } from "../helpers/errorHandling.js";
+import { createSelectElement } from "../views/selectBrandView.js";
 
 export const initHomePage = () => {
   const container = document.getElementById(INTER_FACE);
@@ -31,9 +32,11 @@ export const initHomePage = () => {
   const button = document.getElementById("more-brands-button");
   button.addEventListener("click", async () => {
     if (!document.getElementById("select")) {
+      const select = createSelectElement();
+      mainText.appendChild(select);
       try {
         const jsonData = await getJsonData(BRANDS_API_URL);
-        initSelectElement(jsonData, mainText);
+        initSelectElement(jsonData, select);
       } catch (error) {
         renderError(error);
       }

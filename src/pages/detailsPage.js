@@ -57,7 +57,7 @@ export const initDetailsPage = async (url, currentPageJsonData) => {
       }
       if (e.target === document.querySelector(".prevues-img-button")) {
         if (index !== 0) {
-          index = index - 1;
+          index -= 1;
           getImgSrc(jsonData, index);
         } else {
           index = imgArrayLength;

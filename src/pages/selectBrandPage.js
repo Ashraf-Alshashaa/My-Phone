@@ -6,8 +6,7 @@ import { getJsonData } from "../helpers/fetch.js";
 import { initPhonesListPage } from "./phonesListPage.js";
 import { renderError } from "../helpers/errorHandling.js";
 
-export const initSelectElement = (jsonData, container) => {
-  const select = createSelectElement();
+export const initSelectElement = (jsonData, select) => {
   getBrandsFromAPI(jsonData, select);
 
   select.addEventListener("input", async () => {
@@ -18,7 +17,6 @@ export const initSelectElement = (jsonData, container) => {
       renderError(error);
     }
   });
-  container.appendChild(select);
 };
 
 const getBrandsFromAPI = (jsonData, select) => {
