@@ -5,16 +5,17 @@ import {
   createDetailButton,
   createPhoneListButton,
   createNextImgButton,
-  createPrevuesImgButton,
+  createPreviousImgButton,
 } from "../views/buttonsView.js";
 import { INTER_FACE } from "../constants.js";
 import { initPhonesListPage } from "./phonesListPage.js";
 
-export const initDetailButton = (url, jsonData) => {
+export const initDetailButton = (details, brandName, jsonData, phone_name) => {
   const button = createDetailButton();
   button.addEventListener("click", () => {
-    initDetailsPage(url, jsonData);
+    initDetailsPage(details, brandName, jsonData, phone_name);
   });
+
   return button;
 };
 
@@ -27,10 +28,10 @@ export const initHomePageButton = () => {
   return button;
 };
 
-export const initPhoneListButton = (jsonData) => {
+export const initPhoneListButton = (jsonData, brandName) => {
   const button = createPhoneListButton();
   button.addEventListener("click", () => {
-    initPhonesListPage(jsonData);
+    initPhonesListPage(jsonData, brandName);
   });
   return button;
 };
@@ -40,7 +41,7 @@ export const initNextImgButton = (container) => {
   container.appendChild(button);
 };
 
-export const initPrevuesImgButton = (container) => {
-  const button = createPrevuesImgButton();
+export const initPreviousImgButton = (container) => {
+  const button = createPreviousImgButton();
   container.appendChild(button);
 };

@@ -9,9 +9,9 @@ export const createSelectElement = () => {
   return select;
 };
 
-export const createOptionElement = (name, url) => {
+export const createOptionElement = (brand_name) => {
   const option = document.createElement("option");
-  option.innerText = name;
-  option.value = url;
+  option.innerText = brand_name;
+  option.value = brand_name;
   return option;
 };

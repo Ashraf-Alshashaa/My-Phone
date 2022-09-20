@@ -21,11 +21,17 @@ export const detailsElement = () => {
   return element;
 };
 
-export const summaryElement = (title, paragraph) => {
-  const element = document.createElement("li");
+export const summaryElement = (brandName, phone_name) => {
+  const element = document.createElement("div");
   element.innerHTML = String.raw`
-    <h4>${title}</h4>
-    <span>${paragraph}</span>
+    <li>
+      <h4>brand name</h4>
+      <span>${brandName}</span>
+    </li>
+    <li>
+      <h4>phone name</h4>
+      <span>${phone_name}</span>
+    </li>
     `;
 
   return element;

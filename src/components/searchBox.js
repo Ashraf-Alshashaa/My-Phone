@@ -1,6 +1,6 @@
 import { getJsonData } from "../helpers/fetch.js";
 import { initDetailsPage } from "../pages/detailsPage.js";
-import { renderError } from "../helpers/errorHandling.js";
+import { renderError } from "../views/errorHandling.js";
 
 export const initSearchBox = () => {
   const searchElement = document.getElementById("search");

@@ -1,14 +1,9 @@
 import { createHomeElement } from "../views/homeView.js";
 import { initPhonesListPage } from "./phonesListPage.js";
 import { getJsonData } from "../helpers/fetch.js";
-import {
-  SAMSUNG_API_URL,
-  APPLE_API_URL,
-  BRANDS_API_URL,
-  INTER_FACE,
-} from "../constants.js";
+import { BRANDS_API_URL, INTER_FACE } from "../constants.js";
 import { initSelectElement } from "./selectBrandPage.js";
-import { renderError } from "../helpers/errorHandling.js";
+import { renderError } from "../views/errorHandling.js";
 import { createSelectElement } from "../views/selectBrandView.js";
 
 export const initHomePage = () => {
@@ -18,14 +13,10 @@ export const initHomePage = () => {
   container.appendChild(main);
 
   const appleElement = document.getElementById("apple");
-  addEventListenerFetchData(appleElement, APPLE_API_URL, initPhonesListPage);
+  addEventListenerFetchData(appleElement, initPhonesListPage);
 
   const samsungElement = document.getElementById("samsung");
-  addEventListenerFetchData(
-    samsungElement,
-    SAMSUNG_API_URL,
-    initPhonesListPage
-  );
+  addEventListenerFetchData(samsungElement, initPhonesListPage);
 
   const mainText = document.querySelector(".main-text");
 
@@ -35,7 +26,7 @@ export const initHomePage = () => {
       const select = createSelectElement();
       mainText.appendChild(select);
       try {
-        const jsonData = await getJsonData(BRANDS_API_URL);
+        const jsonData = await getJsonData();
         initSelectElement(jsonData, select);
       } catch (error) {
         renderError(error);
@@ -44,13 +35,15 @@ export const initHomePage = () => {
   });
 };
 
-const addEventListenerFetchData = (element, url, callback) => {
+const addEventListenerFetchData = (element, callback) => {
   element.addEventListener("click", async (e) => {
+    const brandName = e.target.parentElement.id;
     try {
-      const jsonData = await getJsonData(url);
-      callback(jsonData);
+      const jsonData = await getJsonData();
+      await callback(jsonData, brandName);
     } catch (error) {
       renderError(error);
+      console.log(error);
     }
   });
 };

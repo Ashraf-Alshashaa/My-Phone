@@ -28,9 +28,9 @@ export const createNextImgButton = () => {
   return button;
 };
 
-export const createPrevuesImgButton = () => {
+export const createPreviousImgButton = () => {
   const button = document.createElement("button");
   button.innerText = "<";
-  button.className = "prevues-img-button";
+  button.className = "previous-img-button";
   return button;
 };
