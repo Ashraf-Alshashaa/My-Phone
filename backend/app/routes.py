@@ -1,7 +1,7 @@
 from flask import jsonify
-from app import app, db
+from app import app
+from app import controllers
 
-@app.route('/api', methods=['GET'])
-def get_items():
-    items = db.google.find()
-    return jsonify(list(items)), 200
+@app.route('/api/collections_names', methods=['GET'])
+def collection_names():
+    return {"success": True, "result": controllers.get_collections_names()}
