@@ -16,3 +16,12 @@ def brand_items():
       return {"success": True, "result":controllers.get_brand_items(brand_name)}, 200
     except Exception as e:
       return {"success": False, "msg": "Unable to get brand items, try again later"}, 500
+    
+@app.route('/api/mobile/', methods=['GET'])
+def mobile():
+    brand_name = request.args.get("brand")
+    id = request.args.get("id")
+    try:
+      return {"success": True, "result": controllers.get_mobile(brand_name, id)[0]}, 200
+    except Exception as e:
+      return {"success": False, "msg": "Unable to get mobile, try again later"}, 500
