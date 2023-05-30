@@ -4,9 +4,15 @@ from app import controllers
 
 @app.route('/api/collections_names', methods=['GET'])
 def collection_names():
-    return {"success": True, "result": controllers.get_collections_names()}, 200
+    try:
+      return {"success": True, "result": controllers.get_collections_names()}, 200
+    except Exception as e:
+      return {"success": False, "msg": "Unable to get collections, try again later"}, 500
 
 @app.route('/api/brand/', methods=['GET'])
 def brand_items():
-    brand_name = request.args.get("brand")
-    return {"success": True, "result":controllers.get_brand_items(brand_name)}, 200
+    try:
+      brand_name = request.args.get("brand")
+      return {"success": True, "result":controllers.get_brand_items(brand_name)}, 200
+    except Exception as e:
+      return {"success": False, "msg": "Unable to get brand items, try again later"}, 500

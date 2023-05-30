@@ -1,5 +1,4 @@
 from app import db
-from bson.json_util import dumps
 
 def get_collections_names():
     collection_names = db.list_collection_names()
