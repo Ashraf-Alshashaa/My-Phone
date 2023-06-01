@@ -1,8 +1,7 @@
 from flask import request, jsonify
-from app import app
-from app import controllers
+from app import app, controllers
 
-@app.route('/api/collections_names', methods=['GET'])
+@app.route('/api/collections-names', methods=['GET'])
 def collection_names():
     return controllers.get_collections_names()
     
