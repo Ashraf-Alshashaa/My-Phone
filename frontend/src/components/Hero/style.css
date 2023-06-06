@@ -7,36 +7,67 @@
 }
 
 .hero-mobile {
-  width: 22%;
+  width: 25%;
   right: 10%;
   position: absolute;
-  top: 20%;
+  top: 15%;
   z-index: 100;
 }
 
 .hero-info {
-  width: 30%;
-  top: 40%;
+  top: 30%;
   left: 10%;
   position: absolute;
 }
 
+.hero-title {
+  color: white;
+  font-size: 42px;
+  font-weight: 800;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+}
+
 .hero-text {
   color: white;
-  font-size: xx-large;
+  font-size: 10px;
   font-family: "Raleway", sans-serif;
+  font-weight: 200;
 }
 
-.brands-selector-container {
-  margin-top: 20%;
-  padding: 10px;
-  width: 100%;
+@media only screen and (max-width: 800px) {
+  .hero-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .hero-text {
+    font-size: 8px;
+  }
 }
 
-.selector-title {
-  font-size: medium;
-  color: white;
-  border: 1px solid white;
-  padding: 10px;
-  min-width: 50%;
+@media only screen and (max-width: 600px) {
+  .hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-info {
+    width: 200px;
+    top: auto;
+    left: auto;
+  }
+  .hero-mobile {
+    display: none;
+  }
+  .hero-title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .hero-text {
+    display: none;
+  }
 }

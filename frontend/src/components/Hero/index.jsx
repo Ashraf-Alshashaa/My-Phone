@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const Hero = () => {
+const Hero = ({ children }) => {
   return (
     <div>
       <div className="hero-container">
@@ -20,10 +20,14 @@ const Hero = () => {
           alt={"hero-background"}
         />
         <div className="hero-info">
-          <div className="hero-text">UNLEASH LIMITLESS INFORMATION!</div>
-          <div className="brands-selector-container">
-            <span className="selector-title">Select Your Brand</span>
-          </div>
+          <h2 className="hero-title">
+            UNLEASH <br />
+            KNOWLEDGE!
+          </h2>
+          <span className="hero-text">
+            Unleash Boundless Potential with Mobile Technology's Limitless Power
+          </span>
+          {children}
         </div>
       </div>
     </div>

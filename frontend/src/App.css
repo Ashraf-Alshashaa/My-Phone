@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 :root {
@@ -9,6 +9,8 @@
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
+  border: none;
+  box-shadow: none;
 }
 body {
   display: flex;
@@ -19,4 +21,18 @@ body {
 
 #root {
   max-width: 1200px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
 }
