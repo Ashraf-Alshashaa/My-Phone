@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
+import Header from "../../components/Header";
 import Hero from "../../components/Hero";
 import BrandsSelector from "../../components/BrandsSelector";
 import "./style.css";
@@ -25,11 +26,12 @@ const Home = () => {
   }, []);
   if (isLoading) return <div>is loading</div>;
   return (
-    <div>
+    <main className="home-page-container">
+      <Header />
       <Hero>
         <BrandsSelector brands={brands} />
       </Hero>
-    </div>
+    </main>
   );
 };
 
