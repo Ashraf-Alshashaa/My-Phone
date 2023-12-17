@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Img from "../../components/Img";
 import "./style.css";
 
 const Mobile = () => {
   const { state } = useLocation();
-  // console.log(state);
   const {
     name,
     battery,
@@ -18,7 +17,6 @@ const Mobile = () => {
   } = state;
   const [viewedImg, setViewedImg] = useState(images[0]);
   const detailsSummary = { battery, camera, display, price, processor };
-  console.log(state);
 
   return (
     <main className="mobile-page-container">
