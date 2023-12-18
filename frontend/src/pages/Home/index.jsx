@@ -18,6 +18,29 @@ const Home = () => {
     (data) => setBrands(data?.result)
   );
 
+  const bestBrands = [
+    {
+      path: "/brand-page/apple",
+      logo: AppleLogo,
+      name: "Apple",
+    },
+    {
+      path: "/brand-page/samsung",
+      logo: SamsungLogo,
+      name: "Samsung",
+    },
+    {
+      path: "/brand-page/huawei",
+      logo: HuaweiLogo,
+      name: "Huawei",
+    },
+    {
+      path: "/brand-page/mi",
+      logo: XiaomiLogo,
+      name: "MI",
+    },
+  ];
+
   const isLoading = isLoadingBrands;
 
   useEffect(() => {
@@ -37,30 +60,14 @@ const Home = () => {
         <BrandsSelector brands={brands} />
       </Hero>
       <div className="brands-btn-section">
-        <Link to={"/brand-page/apple"} className="brand-btn">
-          <div className="brand-logo-container">
-            <img className="brand-logo" src={AppleLogo} alt="Apple Logo" />
-          </div>
-          <p className="brand-title">Apple</p>
-        </Link>
-        <Link to={"/brand-page/samsung"} className="brand-btn">
-          <div className="brand-logo-container">
-            <img className="brand-logo" src={SamsungLogo} alt="Samsung Logo" />
-          </div>
-          <p className="brand-title">Samsung</p>
-        </Link>
-        <Link to={"/brand-page/huawei"} className="brand-btn">
-          <div className="brand-logo-container">
-            <img className="brand-logo" src={HuaweiLogo} alt="Huawei Logo" />
-          </div>
-          <p className="brand-title">Huawei</p>
-        </Link>
-        <Link to={"/brand-page/mi"} className="brand-btn">
-          <div className="brand-logo-container">
-            <img className="brand-logo" src={XiaomiLogo} alt="Xiaomi Logo" />
-          </div>
-          <p className="brand-title">MI</p>
-        </Link>
+        {bestBrands.map(({ path, logo, name }) => (
+          <Link to={path} className="brand-btn">
+            <div className="brand-logo-container">
+              <img className="brand-logo" src={logo} alt="Apple Logo" />
+            </div>
+            <p className="brand-title">{name}</p>
+          </Link>
+        ))}
       </div>
     </main>
   );
