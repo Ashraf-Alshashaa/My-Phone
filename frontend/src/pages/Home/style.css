@@ -8,6 +8,7 @@
   width: 80%;
   margin-left: 10%;
   margin-bottom: 32px;
+  gap: 16px;
 }
 .brand-btn {
   text-decoration: none;
@@ -30,4 +31,25 @@
   font-weight: 500;
   font-size: larger;
   color: gray;
+}
+
+@media only screen and (max-width: 600px) {
+  .brands-btn-section {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  .brand-btn {
+    text-decoration: none;
+  }
+  .brand-logo-container {
+    width: 60px;
+    height: 60px;
+  }
+  .brand-logo {
+    width: 40px;
+  }
+  .brand-title {
+    font-size: small;
+  }
 }
