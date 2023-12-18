@@ -18,7 +18,7 @@ const BrandsSelector = ({ brands }) => {
 
   const handelClick = (selectedBrand) => {
     selectedBrand !== "Select Brand"
-      ? navigate("/brand-page", {
+      ? navigate(`/brand-page/${selectedBrand}`, {
           state: selectedBrand,
         })
       : // todo replace alert with popup msg
