@@ -25,12 +25,8 @@ const Mobile = () => {
         <div className="view-images">
           <div className="all-images">
             {images.map((img, idx) => (
-              <div className="all-images-img">
-                <Img
-                  key={img + idx}
-                  src={img}
-                  onClick={() => setViewedImg(img)}
-                />
+              <div key={img + idx} className="all-images-img">
+                <Img src={img} onClick={() => setViewedImg(img)} />
               </div>
             ))}
           </div>
@@ -43,7 +39,10 @@ const Mobile = () => {
           {Object.entries(detailsSummary).map(([key, val]) => (
             <div key={key} className="summary-item">
               <p className="detail-name"> {key} :</p>
-              <span className="detail-info">{val ? val : "Not Found"}</span>
+              <span className="detail-info">
+                {key === "price" && "$ "}
+                {val ? val : "Not Found"}
+              </span>
             </div>
           ))}
         </div>
@@ -57,7 +56,7 @@ const Mobile = () => {
               {val.map((specification) => {
                 return Object.entries(specification).map(([key, val]) => (
                   <div key={key} className="specification-item">
-                    <p className="specification-key"> {key} :</p>
+                    <p className="specification-key">{key}:</p>
                     <span className="specification-val">
                       {val ? val : "Not Found"}
                     </span>
