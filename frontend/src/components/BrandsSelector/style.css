@@ -40,7 +40,7 @@
   display: block;
   background-color: var(--primary);
   height: 200px;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 5px 0;
   width: 100%;
   border-radius: 0 0 3px 3px;
@@ -48,6 +48,7 @@
 
 .brand-item {
   margin: 5px 0;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 800px) {
