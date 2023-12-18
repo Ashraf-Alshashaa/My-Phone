@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
 import "./style.css";
 import { Link, useParams } from "react-router-dom";
+import Loading from "../loading";
 
 const Brand = () => {
   const [brands, setBrands] = useState([]);
@@ -38,7 +39,7 @@ const Brand = () => {
     }
   };
 
-  if (isLoading) return <div>is loading</div>;
+  if (isLoading) return <Loading />;
   return (
     <main className="brand-page-container">
       <h1 className="brant-page-title">{brand?.toUpperCase()}</h1>

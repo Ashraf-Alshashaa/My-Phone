@@ -7,6 +7,7 @@ import AppleLogo from "./icons/Apple.png";
 import SamsungLogo from "./icons/Samsung.png";
 import XiaomiLogo from "./icons/Xiaomi.png";
 import HuaweiLogo from "./icons/Huawei.png";
+import Loading from "../loading";
 import "./style.css";
 import { Link } from "react-router-dom";
 
@@ -52,25 +53,26 @@ const Home = () => {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  if (isLoading) return <div>is loading</div>;
-  return (
-    <main className="home-page-container">
-      <Header />
-      <Hero>
-        <BrandsSelector brands={brands} />
-      </Hero>
-      <div className="brands-btn-section">
-        {bestBrands.map(({ path, logo, name }) => (
-          <Link to={path} className="brand-btn">
-            <div className="brand-logo-container">
-              <img className="brand-logo" src={logo} alt="Apple Logo" />
-            </div>
-            <p className="brand-title">{name}</p>
-          </Link>
-        ))}
-      </div>
-    </main>
-  );
+  if (isLoading) return <Loading />;
+  if (brands[1])
+    return (
+      <main className="home-page-container">
+        <Header />
+        <Hero>
+          <BrandsSelector brands={brands} />
+        </Hero>
+        <div className="brands-btn-section">
+          {bestBrands.map(({ path, logo, name }) => (
+            <Link to={path} className="brand-btn">
+              <div className="brand-logo-container">
+                <img className="brand-logo" src={logo} alt="Apple Logo" />
+              </div>
+              <p className="brand-title">{name}</p>
+            </Link>
+          ))}
+        </div>
+      </main>
+    );
 };
 
 export default Home;
