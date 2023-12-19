@@ -34,14 +34,14 @@
   background-color: whitesmoke;
 }
 .detail-name {
-  width: 100px;
+  min-width: 100px;
 }
 
 /* Images */
 
 .view-images {
   display: flex;
-  height: 250px;
+  height: 350px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 8px;
@@ -128,7 +128,7 @@
 }
 @media only screen and (max-width: 600px) {
   .mobile-page-container {
-    padding: 06px;
+    padding: 16px;
   }
   .mobile-summary-cont {
     flex-direction: column;
