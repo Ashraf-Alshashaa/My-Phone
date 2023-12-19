@@ -5,18 +5,8 @@ import "./style.css";
 
 const Mobile = () => {
   const { state } = useLocation();
-  const {
-    name,
-    battery,
-    camera,
-    display,
-    images,
-    price,
-    processor,
-    specifications,
-  } = state;
+  const { _id, name, specifications, images, ...detailsSummary } = state;
   const [viewedImg, setViewedImg] = useState(images[0]);
-  const detailsSummary = { battery, camera, display, price, processor };
 
   return (
     <main className="mobile-page-container">
