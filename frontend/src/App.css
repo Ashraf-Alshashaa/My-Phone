@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --primary: #33373a;
+  --secondary: #35a6e2;
+}
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+#root {
+  max-width: 1200px;
+  width: 100%;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
