@@ -28,7 +28,7 @@ const Mobile = () => {
           <h3 className="mobile-details-title">Summary</h3>
           {Object.entries(detailsSummary).map(([key, val]) => (
             <div key={key} className="summary-item">
-              <p className="detail-name"> {key} :</p>
+              <p className="detail-name"> {key}:</p>
               <span className="detail-info">
                 {key === "price" && "$ "}
                 {val ? val : "Not Found"}
