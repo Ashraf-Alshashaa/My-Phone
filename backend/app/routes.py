@@ -15,3 +15,8 @@ def mobile():
     brand_name = request.args.get("brand")
     id = request.args.get("id")
     return controllers.get_mobile(brand_name, id)
+
+@app.route('/api/search/', methods=['POST'])
+def search():
+    search_str = request.json.get("search_str")
+    return controllers.search_mobiles(search_str)
