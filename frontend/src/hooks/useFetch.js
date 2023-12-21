@@ -15,9 +15,9 @@ const useFetch = (route, onReceived) => {
     setIsLoading(true);
 
     const fetchData = async () => {
-      const url = `http://127.0.0.1:5000/api${route}`;
+      const url = `${process.env.REACT_APP_BASE_SERVER_URL}/api${route}`;
 
-      const res = await fetch(url, { options });
+      const res = await fetch(url, options);
 
       if (!res.ok) {
         setError(
