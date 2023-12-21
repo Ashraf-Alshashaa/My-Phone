@@ -17,7 +17,7 @@ const useFetch = (route, onReceived) => {
     const fetchData = async () => {
       const url = `${process.env.REACT_APP_BASE_SERVER_URL}/api${route}`;
 
-      const res = await fetch(url, { options });
+      const res = await fetch(url, options);
 
       if (!res.ok) {
         setError(
