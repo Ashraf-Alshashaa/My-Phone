@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
+import extractNameInfo from "../../hooks/extract-name-info";
 import Img from "../../components/Img";
 
 const Header = ({ children }) => {
@@ -99,7 +100,14 @@ const Header = ({ children }) => {
                 <div className="search-item-img">
                   <Img src={mobile.images[0]} />
                 </div>
-                <p className="search-item-name"></p>
+                <div className="search-item-text-cont">
+                  <p className="search-item-name">
+                    {extractNameInfo(mobile.name).name}
+                  </p>
+                  <p className="search-item-info">
+                    {extractNameInfo(mobile.name).info}
+                  </p>
+                </div>
               </Link>
             ))}
           </ul>
