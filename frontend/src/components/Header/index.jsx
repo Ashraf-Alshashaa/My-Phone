@@ -86,9 +86,12 @@ const Header = ({ children }) => {
               if (e.key === "Enter") handleSearch();
             }}
           />
-          <button className="search-btn" onClick={handleSearch}>
+          <span
+            class="material-symbols-outlined search-btn"
+            onClick={handleSearch}
+          >
             search
-          </button>
+          </span>
           <ul className="search-result-cont">
             {mobiles?.map((mobile) => (
               <Link
