@@ -60,6 +60,7 @@ const Header = () => {
           <input
             className="search-input"
             value={searchStr}
+            placeholder="Search for a mobile"
             type="text"
             onChange={(e) => setSearchStr(e.target.value)}
             onKeyDown={(e) => {
