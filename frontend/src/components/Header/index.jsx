@@ -5,17 +5,12 @@ import useFetch from "../../hooks/useFetch";
 import extractNameInfo from "../../hooks/extract-name-info";
 import Img from "../../components/Img";
 
-const Header = ({ children }) => {
-  const [visibility, setVisibility] = useState(false);
+const Header = () => {
   const [searchStr, setSearchStr] = useState("");
   const [mobiles, setMobiles] = useState([]);
 
-  const screenSize = window.innerWidth;
-
   useEffect(() => {
     const handleVisibility = (e) => {
-      e.target.className !== "fa-solid fa-bars nav-list-btn" &&
-        setVisibility(false);
       if (
         e.target.className !== "search-input" &&
         e.target.className !== "material-symbols-outlined search-btn"
@@ -28,7 +23,7 @@ const Header = ({ children }) => {
     return () => {
       window.removeEventListener("click", handleVisibility);
     };
-  }, [visibility]);
+  }, []);
 
   const { performFetch: fetchMobiles } = useFetch("/search/", (data) =>
     setMobiles(data?.result)
@@ -60,34 +55,12 @@ const Header = ({ children }) => {
         </div>
         <h2 className="logo-text">MY PHONE</h2>
       </div>
-      <ul className={`nav-container  ${visibility && "background"}`}>
-        {screenSize < 800 && (
-          <i
-            className="fa-solid fa-bars nav-list-btn"
-            onClick={(e) => {
-              setVisibility(!visibility);
-            }}
-          ></i>
-        )}
-        <Link className={`nav-item visible-${visibility}`} to={"/"}>
-          Home
-        </Link>
-        <Link className={`nav-item visible-${visibility}`} to={"/brands"}>
-          Brands
-        </Link>
-        <Link className={`nav-item visible-${visibility}`} to={"/compering"}>
-          Compering
-        </Link>
-        <Link className={`nav-item visible-${visibility}`} to={"/about-us"}>
-          About Us
-        </Link>
-      </ul>
-      {screenSize > 800 && <div className="search-box">{children}</div>}
       <div className="search-cont">
         <div className="input-cont">
           <input
             className="search-input"
             value={searchStr}
+            placeholder="Search for a mobile"
             type="text"
             onChange={(e) => setSearchStr(e.target.value)}
             onKeyDown={(e) => {
@@ -124,6 +97,9 @@ const Header = ({ children }) => {
           </ul>
         </div>
       </div>
+      <Link className={`nav-item`} to={"/about-us"}>
+        About Us
+      </Link>
     </header>
   );
 };
