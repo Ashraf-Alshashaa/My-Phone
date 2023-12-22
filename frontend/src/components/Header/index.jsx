@@ -13,9 +13,17 @@ const Header = ({ children }) => {
   const screenSize = window.innerWidth;
 
   useEffect(() => {
-    const handleVisibility = (e) =>
+    const handleVisibility = (e) => {
       e.target.className !== "fa-solid fa-bars nav-list-btn" &&
-      setVisibility(false);
+        setVisibility(false);
+      if (
+        e.target.className !== "search-input" &&
+        e.target.className !== "material-symbols-outlined search-btn"
+      ) {
+        setSearchStr("");
+        setMobiles([]);
+      }
+    };
     window.addEventListener("click", (e) => handleVisibility(e));
     return () => {
       window.removeEventListener("click", handleVisibility);
@@ -87,7 +95,7 @@ const Header = ({ children }) => {
             }}
           />
           <span
-            class="material-symbols-outlined search-btn"
+            className="material-symbols-outlined search-btn"
             onClick={handleSearch}
           >
             search
