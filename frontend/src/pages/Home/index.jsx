@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
+import extractNameInfo from "../../hooks/extract-name-info";
 import Header from "../../components/Header";
 import Hero from "../../components/Hero";
 import BrandsSelector from "../../components/BrandsSelector";
@@ -10,14 +11,19 @@ import HuaweiLogo from "./icons/Huawei.png";
 import Loading from "../loading";
 import "./style.css";
 import { Link } from "react-router-dom";
+import Img from "../../components/Img";
 
 const Home = () => {
   const [brands, setBrands] = useState([]);
+  const [bestMobiles, setBestMobiles] = useState([]);
 
   const { performFetch: fetchBrands, isLoading: isLoadingBrands } = useFetch(
     `/collections-names`,
     (data) => setBrands(data?.result)
   );
+
+  const { performFetch: fetchBestMobile, isLoading: isLoadingBestMobile } =
+    useFetch(`/best-mobiles/`, (data) => setBestMobiles(data?.result));
 
   const bestBrands = [
     {
@@ -42,10 +48,16 @@ const Home = () => {
     },
   ];
 
-  const isLoading = isLoadingBrands;
+  const isLoading = isLoadingBrands && isLoadingBestMobile;
 
   useEffect(() => {
     fetchBrands({
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+    fetchBestMobile({
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -68,6 +80,17 @@ const Home = () => {
                 <img className="brand-logo" src={logo} alt="Apple Logo" />
               </div>
               <p className="brand-title">{name}</p>
+            </Link>
+          ))}
+        </div>
+        <h1 className="best-mobiles-title">Best Mobiles</h1>
+        <div className="best-mobiles-section">
+          {bestMobiles.map((mobile) => (
+            <Link to={"/mobile"} state={mobile} className="best-mobile">
+              <p key={mobile._id}>{extractNameInfo(mobile.name).name}</p>
+              <div className="best-mobile-img">
+                <Img src={mobile.images[0]} />
+              </div>
             </Link>
           ))}
         </div>
