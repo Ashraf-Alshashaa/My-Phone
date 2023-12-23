@@ -32,6 +32,54 @@
   font-size: larger;
   color: gray;
 }
+.best-mobiles-title {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 28px;
+}
+.best-mobiles-section {
+  display: flex;
+  overflow-y: auto;
+  color: var(--primary);
+  gap: 16px;
+  padding: 8px;
+  margin-bottom: 32px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 16px;
+  border-radius: 8px;
+}
+.best-mobiles-section::-webkit-scrollbar {
+  height: 8px;
+}
+.best-mobile {
+  text-decoration: none;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  padding: 16px;
+  font-weight: 500;
+  color: var(--primary);
+  border-radius: 8px;
+}
+.best-mobile p {
+  width: 150px;
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.best-mobile-img {
+  margin-top: 16px;
+  height: 200px;
+  width: 150px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .best-mobiles-section {
+    margin: 0 32px 32px 32px;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .brands-btn-section {
@@ -51,5 +99,22 @@
   }
   .brand-title {
     font-size: small;
+  }
+  .best-mobiles-title {
+    font-size: 16px;
+  }
+  .best-mobiles-section {
+    margin: 0 16px 16px 16px;
+  }
+  .best-mobile {
+    padding: 8px;
+  }
+  .best-mobile p {
+    width: 120px;
+  }
+  .best-mobile-img {
+    margin-top: 8px;
+    height: 150px;
+    width: 120px;
   }
 }

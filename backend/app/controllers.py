@@ -39,3 +39,20 @@ def search_mobiles(search_str):
   except Exception as e:
     return jsonify({"success": False, "msg": "Unable to retrieve the mobiles. Please try again later."}), 500
     
+def get_best_mobile():
+  results = []
+  try:
+    collections = db.list_collection_names()
+
+    for collection_name in collections:
+        collection = db[collection_name]
+        query = [{'$sort': {'price': -1}}, {'$limit': 1 }]
+        collection_results = list(collection.aggregate(query))
+
+        if collection_results:
+            results = results + collection_results
+
+    return jsonify({"success": True, "result": results}), 200
+  except Exception as e:
+    print(e)
+    return jsonify({"success": False, "msg": "Unable to get the best mobiles. Please try again later."}), 500
