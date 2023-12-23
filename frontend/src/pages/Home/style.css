@@ -1,17 +1,30 @@
 .home-page-container {
   position: relative;
 }
+.section-title {
+  margin-bottom: 32px;
+  margin-top: 64px;
+  text-align: center;
+  font-size: 28px;
+}
 .brands-btn-section {
   display: flex;
   justify-content: space-between;
-  margin-top: 74px;
   width: 80%;
-  margin-left: 10%;
-  margin-bottom: 32px;
+  margin: 72px 10% 0 10%;
   gap: 16px;
 }
 .brand-btn {
   text-decoration: none;
+}
+.brand-btn:hover .brand-logo {
+  transform: scale(1.8);
+}
+.brand-btn:hover .brand-title {
+  color: var(--primary);
+}
+.brand-btn:hover .brand-logo-container {
+  transform: scale(0.95);
 }
 .brand-logo-container {
   width: 100px;
@@ -21,9 +34,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.2s ease-in-out;
 }
 .brand-logo {
   width: 50px;
+  transition: all 0.2s ease-in-out;
 }
 .brand-title {
   text-align: center;
@@ -32,18 +47,13 @@
   font-size: larger;
   color: gray;
 }
-.best-mobiles-title {
-  margin-bottom: 16px;
-  text-align: center;
-  font-size: 28px;
-}
 .best-mobiles-section {
   display: flex;
   overflow-y: auto;
   color: var(--primary);
   gap: 16px;
   padding: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   padding: 16px;
@@ -61,18 +71,27 @@
   color: var(--primary);
   border-radius: 8px;
 }
-.best-mobile p {
+.best-mobile:hover .best-mobile-img {
+  transform: scale(1.1);
+}
+
+.best-mobile:hover .best-mobile-title {
+  transform: scale(1.3);
+}
+.best-mobile-title {
   width: 150px;
   font-size: 12px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: all 0.2s ease-in-out;
 }
 .best-mobile-img {
   margin-top: 16px;
   height: 200px;
   width: 150px;
+  transition: all 0.2s ease-in-out;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -100,7 +119,7 @@
   .brand-title {
     font-size: small;
   }
-  .best-mobiles-title {
+  .section-title {
     font-size: 16px;
   }
   .best-mobiles-section {
