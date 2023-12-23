@@ -63,7 +63,7 @@ const AboutUs = () => {
               rel="noopener noreferrer"
             >
               <p>Stay updated on my professional journey.</p>
-              <i class="fa-brands fa-linkedin"></i>
+              <i className="fa-brands fa-linkedin"></i>
             </a>
           </li>
           <li>
@@ -73,7 +73,7 @@ const AboutUs = () => {
               rel="noopener noreferrer"
             >
               <p>Gain insights into my coding expertise.</p>
-              <i class="fa-brands fa-square-github"></i>
+              <i className="fa-brands fa-square-github"></i>
             </a>
           </li>
         </ul>
@@ -88,21 +88,21 @@ const AboutUs = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fa-brands fa-linkedin"></i>
+              <i className="fa-brands fa-linkedin"></i>
             </a>
             <a
               href="https://github.com/Ashraf-Alshashaa"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fa-brands fa-square-github"></i>
+              <i className="fa-brands fa-square-github"></i>
             </a>
             <a
               href="mailto: ashraf.alchechae@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fa-solid fa-envelope"></i>
+              <i className="fa-solid fa-envelope"></i>
             </a>
           </div>
         </div>
