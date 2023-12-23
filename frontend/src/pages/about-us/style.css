@@ -1,0 +1,109 @@
+.about-us-page-container {
+  padding: 32px;
+  line-height: 28px;
+}
+.about-us-page-container h2 {
+  margin-bottom: 16px;
+}
+.about-us-summary h1 {
+  margin-bottom: 8px;
+}
+
+.about-us-page-container i {
+  font-size: x-large;
+  margin-right: 8px;
+}
+.about-us-summary,
+.developer-section,
+.why-choose-section,
+.connect-section {
+  margin-bottom: 64px;
+}
+
+.about-us-summary p,
+.why-choose-section ul,
+.connect-section ul,
+.connect-section > p,
+.touch-card {
+  margin-left: 16px;
+}
+
+.developer-section {
+  display: flex;
+  align-items: center;
+  width: 75%;
+}
+.developer-img {
+  width: 200px;
+  min-width: 300px;
+  height: 300px;
+  margin-right: 32px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.connect-section ul {
+  text-decoration: none;
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+.connect-section li {
+  width: 200px;
+  text-decoration: none;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  padding: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.connect-section li:hover,
+.touch-card:hover {
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.connect-section a {
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--primary);
+  text-align: center;
+}
+.connect-section a i,
+.touch-card i {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 8px;
+  color: var(--secondary);
+}
+
+.connect-section a i {
+  width: 100%;
+  color: var(--primary);
+}
+.touch-card {
+  width: 200px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  padding: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.touch-card div {
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 850px) {
+  .developer-section {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .developer-section {
+    flex-direction: column;
+  }
+  .developer-img {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
