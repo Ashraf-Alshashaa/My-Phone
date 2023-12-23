@@ -83,7 +83,7 @@ const Home = () => {
             </Link>
           ))}
         </div>
-        <h1 className="best-mobiles-title">Best Mobiles</h1>
+        <h1 className="section-title">Best Mobiles</h1>
         <div className="best-mobiles-section">
           {bestMobiles.map((mobile) => (
             <Link to={"/mobile"} state={mobile} className="best-mobile">

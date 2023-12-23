@@ -1,13 +1,17 @@
 .home-page-container {
   position: relative;
 }
+.section-title {
+  margin-bottom: 32px;
+  margin-top: 64px;
+  text-align: center;
+  font-size: 28px;
+}
 .brands-btn-section {
   display: flex;
   justify-content: space-between;
-  margin-top: 74px;
   width: 80%;
-  margin-left: 10%;
-  margin-bottom: 32px;
+  margin: 72px 10% 0 10%;
   gap: 16px;
 }
 .brand-btn {
@@ -31,11 +35,6 @@
   font-weight: 500;
   font-size: larger;
   color: gray;
-}
-.best-mobiles-title {
-  margin-bottom: 16px;
-  text-align: center;
-  font-size: 28px;
 }
 .best-mobiles-section {
   display: flex;
@@ -100,7 +99,7 @@
   .brand-title {
     font-size: small;
   }
-  .best-mobiles-title {
+  .section-title {
     font-size: 16px;
   }
   .best-mobiles-section {
