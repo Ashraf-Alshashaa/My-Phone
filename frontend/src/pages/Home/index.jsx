@@ -74,8 +74,8 @@ const Home = () => {
           <BrandsSelector brands={brands} />
         </Hero>
         <div className="brands-btn-section">
-          {bestBrands.map(({ path, logo, name }) => (
-            <Link to={path} className="brand-btn">
+          {bestBrands.map(({ path, logo, name }, idx) => (
+            <Link key={`brand-btn-${idx}`} to={path} className="brand-btn">
               <div className="brand-logo-container">
                 <img className="brand-logo" src={logo} alt="Apple Logo" />
               </div>
@@ -86,8 +86,13 @@ const Home = () => {
         <h1 className="section-title">Best Mobiles</h1>
         <div className="best-mobiles-section">
           {bestMobiles.map((mobile) => (
-            <Link to={"/mobile"} state={mobile} className="best-mobile">
-              <p className="best-mobile-title" key={mobile._id}>
+            <Link
+              key={mobile._id}
+              to={"/mobile"}
+              state={mobile}
+              className="best-mobile"
+            >
+              <p className="best-mobile-title">
                 {extractNameInfo(mobile.name).name}
               </p>
               <div className="best-mobile-img">
