@@ -17,6 +17,15 @@
 .brand-btn {
   text-decoration: none;
 }
+.brand-btn:hover .brand-logo {
+  transform: scale(1.8);
+}
+.brand-btn:hover .brand-title {
+  color: var(--primary);
+}
+.brand-btn:hover .brand-logo-container {
+  transform: scale(0.95);
+}
 .brand-logo-container {
   width: 100px;
   height: 100px;
@@ -25,9 +34,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.2s ease-in-out;
 }
 .brand-logo {
   width: 50px;
+  transition: all 0.2s ease-in-out;
 }
 .brand-title {
   text-align: center;
