@@ -87,7 +87,9 @@ const Home = () => {
         <div className="best-mobiles-section">
           {bestMobiles.map((mobile) => (
             <Link to={"/mobile"} state={mobile} className="best-mobile">
-              <p key={mobile._id}>{extractNameInfo(mobile.name).name}</p>
+              <p className="best-mobile-title" key={mobile._id}>
+                {extractNameInfo(mobile.name).name}
+              </p>
               <div className="best-mobile-img">
                 <Img src={mobile.images[0]} />
               </div>
