@@ -1,6 +1,6 @@
 Flask==2.0.1
-pymongo==4.1.1
+pymongo==4.6.1
 python-decouple==3.5
 Werkzeug==2.2.2
 Flask-Cors==3.0.10
-pymongo[srv]==1.16.0
+pymongo[srv]==4.6.1
