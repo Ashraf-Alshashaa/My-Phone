@@ -1,6 +1,6 @@
 # MY PHONE _V3_
 
-![view-img](./frontend/public/imgaes/view-website.png)
+![view-img](./frontend/public/images/view-website.png)
 
 Welcome to MY PHONE, where you can dive into a comprehensive database of mobile phones. Our website is built using a dynamic combination of React and Flask on the server, complemented by the robust MongoDB as our backend database. Whether you're seeking detailed specifications, vibrant images, or the latest models, MY PHONE offers an interactive and seamless exploration of the mobile world.
 
