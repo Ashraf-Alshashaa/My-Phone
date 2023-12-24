@@ -107,7 +107,7 @@ npm install
 - Navigate to the backend folder and run:
 
 ```bash
-python app.py
+python run.py
 ```
 
 - Navigate to the frontend folder and run:
@@ -142,10 +142,6 @@ _________ My-Pone
     |   |   |
     |   |   |____ images
     |   |   |   |____ view-website.png
-    |   |   |   |____ Apple.png
-    |   |   |   |____ Huawei.png
-    |   |   |   |____ Samsung.png
-    |   |   |   |____ Xiaomi.png
     |   |   |
     |   |   |____ favicon.ico
     |   |   |____ index.html
@@ -186,6 +182,13 @@ _________ My-Pone
     |   |   |   |   |____ style.css
     |   |   |   |
     |   |   |   |____ Home
+    |   |   |   |   |
+    |   |   |   |   |____ icons
+    |   |   |   |   |   |____ Apple.png
+    |   |   |   |   |   |____ Huawei.png
+    |   |   |   |   |   |____ Samsung.png
+    |   |   |   |   |   |____ Xiaomi.png
+    |   |   |   |   |
     |   |   |   |   |____ index.jsx
     |   |   |   |   |____ style.css
     |   |   |   |
