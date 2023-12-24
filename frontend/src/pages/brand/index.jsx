@@ -4,6 +4,7 @@ import "./style.css";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../loading";
 import extractNameInfo from "../../hooks/extract-name-info";
+import Img from "../../components/Img";
 
 const Brand = () => {
   const [brands, setBrands] = useState([]);
@@ -32,17 +33,33 @@ const Brand = () => {
       <h1 className="brant-page-title">{brand?.toUpperCase()}</h1>
       <div className="mobile-cards">
         {brands.map((mobile) => {
-          const { _id, name, images } = mobile;
+          const { _id, name, images, price } = mobile;
           return (
-            <div key={_id} className="mobile-card">
-              <h3 className="mobile-name">{extractNameInfo(name).name}</h3>
-              <div className="mobile-img-cont">
-                <img className="mobile-img" src={images[0]} alt={name} />
+            <Link
+              key={_id}
+              state={mobile}
+              to={`/mobile`}
+              className="mobile-card"
+            >
+              <div className="mobile-img">
+                <Img src={images[0]} />
               </div>
-              <Link className="show-details" state={mobile} to={`/mobile`}>
-                Show Details
-              </Link>
-            </div>
+              <div className="mobile-text-container">
+                <h3 className="mobile-name">{extractNameInfo(name).name}</h3>
+                <p>
+                  <span>Color:</span>
+                  {extractNameInfo(name).info.split(",")[0]}
+                </p>
+                <p>
+                  <span>Storage:</span>
+                  {extractNameInfo(name).info.split(",")[1]}
+                </p>
+                <p>
+                  <span>Price:</span>
+                  {`$ ${price}`}
+                </p>
+              </div>
+            </Link>
           );
         })}
       </div>
