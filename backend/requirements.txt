@@ -1,3 +1,8 @@
 Flask==2.0.1
 pymongo==4.1.1
 python-decouple==3.5
+werkzeug==2.2.2 
+gunicorn==21.2.0
+flask-cors==3.0.10
+pymongo[srv]==4.1.1
+waitress==2.0.0
