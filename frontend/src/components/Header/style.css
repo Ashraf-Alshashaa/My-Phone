@@ -1,0 +1,142 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 32px 16px 32px;
+  background-color: #001721;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.img-logo-container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-icon {
+  width: 140%;
+}
+
+.logo-text {
+  color: white;
+  margin-left: 8px;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+}
+
+.search-cont {
+  position: relative;
+  width: 50%;
+}
+
+.input-cont {
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-input {
+  width: 100%;
+  font-size: 16px;
+  padding: 4px 8px;
+  outline: none;
+}
+
+.search-btn {
+  font-weight: 600;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  cursor: pointer;
+}
+.search-result-cont {
+  position: absolute;
+  margin-top: 40px;
+  max-height: 50vh;
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 4px;
+  width: 100%;
+  z-index: 10;
+}
+
+.search-item {
+  display: flex;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  margin: 0 8px 8px 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  width: calc(100% - 16px);
+  color: var(--primary);
+}
+
+.search-item:first-child {
+  margin-top: 8px;
+}
+
+.search-item-text-cont {
+  display: flex;
+  flex-direction: column;
+}
+.search-item-img {
+  height: 50px;
+  width: 50px;
+  min-width: 50px;
+}
+
+.search-item-text-cont {
+  padding: 8px;
+}
+.search-item-name {
+  font-weight: 500;
+}
+
+.search-item-info {
+  font-size: small;
+}
+@media only screen and (max-width: 820px) {
+  header {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  .search-cont {
+    order: 2;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .search-cont {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .img-logo-container {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo-text {
+    font-size: large;
+  }
+
+  .nav-item {
+    font-size: small;
+  }
+}

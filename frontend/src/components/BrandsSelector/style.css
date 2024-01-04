@@ -1,0 +1,82 @@
+.brands-selector-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.brands-selector,
+.brands-selector-sub-btn {
+  color: white;
+  width: 45%;
+  height: 35px;
+  text-align: center;
+  border-radius: 3px;
+}
+.brands-selector {
+  position: relative;
+}
+
+.brands-selector-show-btn {
+  background-color: var(--secondary);
+  height: 100%;
+  width: 100%;
+  color: white;
+  border-radius: 3px;
+}
+.brands-selector-sub-btn {
+  background: none;
+  border: 1px solid white;
+}
+.selector-icon {
+  color: white;
+  margin-right: 10px;
+}
+
+.brands-list-visible-false {
+  display: none;
+}
+
+.brands-list-visible-true {
+  position: absolute;
+  display: block;
+  background-color: var(--primary);
+  height: 200px;
+  overflow-x: auto;
+  padding: 5px 0;
+  width: 100%;
+  border-radius: 0 0 3px 3px;
+}
+
+.brand-item {
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+  .brands-selector-container {
+    margin-top: 30px;
+  }
+  .brands-selector,
+  .brands-selector-sub-btn,
+  .brands-selector-show-btn {
+    font-size: 8px;
+    height: 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .brands-selector-container {
+    margin-top: 30px;
+  }
+  .brands-selector-show-btn {
+    height: 25px;
+    width: 180px;
+    font-size: 12px;
+  }
+  .brands-list-visible-true {
+    width: 180px;
+    font-size: 12px;
+  }
+  .brands-selector-sub-btn {
+    display: none;
+  }
+}
